@@ -10,17 +10,31 @@ Verison History:
     - Minor updates for the 2.0 winwheel example.
 */
 
+:root {
+  --animate-duration: 2s;
+}
+
 body
 {
     font-family: arial;
 }
 
 /* Sets the background image for the wheel */
-td.the_wheel
+.the_wheel
 {
     background-image: url(./wheel_back.png);
     background-position: center;
     background-repeat: none;
+}
+
+.arrow-down {
+  width: 0;
+  height: 0;
+  /*margin-left: 198px;*/
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+
+  border-top: 20px solid black;
 }
 
 /* Do some css reset on selected elements */
@@ -78,4 +92,83 @@ td.pw3
 .margin_bottom
 {
     margin-bottom: 5px;
+}
+
+img#spin_button {
+    display: block;
+    margin: auto;
+}
+
+
+#result {
+    font-size: 5rem;
+    display: flex;
+    align-items: center;
+    margin: auto;
+}
+#result-parent {
+    display: flex;
+}
+
+
+
+/*@font-face {*/
+/*  font-family: "Trickster";*/
+/*  src: local("Trickster"),*/
+/*    url("trickster-COLRv1.otf") format("opentype") tech(color-COLRv1), url("trickster-outline.otf")*/
+/*      format("opentype"), url("trickster-outline.woff") format("woff");*/
+/*}*/
+
+/* CSS */
+.button-3 {
+  appearance: none;
+  background-color: #2ea44f;
+  border: 1px solid rgba(27, 31, 35, .15);
+  border-radius: 6px;
+  box-shadow: rgba(27, 31, 35, .1) 0 1px 0;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: -apple-system,system-ui,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji";
+  font-size: 5rem;
+  font-weight: 600;
+  /*line-height: 20px;*/
+  padding: 6px 16px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: middle;
+  white-space: nowrap;
+    margin: auto;
+    width: 100%;
+}
+
+.button-3:focus:not(:focus-visible):not(.focus-visible) {
+  box-shadow: none;
+  outline: none;
+}
+
+.button-3:hover {
+  background-color: #2c974b;
+}
+
+.button-3:focus {
+  box-shadow: rgba(46, 164, 79, .4) 0 0 0 3px;
+  outline: none;
+}
+
+.button-3:disabled {
+  background-color: #94d3a2;
+  border-color: rgba(27, 31, 35, .1);
+  color: rgba(255, 255, 255, .8);
+  cursor: default;
+}
+
+.button-3:active {
+  background-color: #298e46;
+  box-shadow: rgba(20, 70, 32, .2) 0 1px 0 inset;
 }
