@@ -43,8 +43,9 @@
         <div class="container-fluid" style="margin-top:50px;">
             <div class="row">
                 <div class="col-md-1"></div>
-                <div class="col-md-2" style="display:flex;align-items:center">
-                    <button id="spin_button" class="button-3" role="button" onClick="startSpin();">SPIN</button>
+                <div class="col-md-2">
+                    <button id="spin_button" class="button-3" role="button" onClick="startSpin();">SPIN</button><br/><br/>
+                    <button id="spin_button" class="button-3" role="button" onClick="playHornSound();">HORN</button>
                 </div>
                 <div class="col-md-4">
                     <div class="arrow-down" style="margin:auto"></div>
@@ -158,6 +159,7 @@
             // we can play a small tick sound here like you would expect on real prizewheels.
             // -----------------------------------------------------------------
             let audio = new Audio('tick.mp3');  // Create audio object and load tick.mp3 file.
+            let horn_audio = new Audio('air_horn.mp3');
 
 
             function getColorFromName(wheelSegments, colorName) {
@@ -175,6 +177,16 @@
                         return wheelSegments[i].text;
                     }
                 }
+            }
+
+            function playHornSound()
+            {
+                // Stop and rewind the sound if it already happens to be playing.
+                horn_audio.pause();
+                horn_audio.currentTime = 0;
+
+                // Play the sound.
+                horn_audio.play();
             }
 
             function playSound()
