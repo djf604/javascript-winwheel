@@ -210,8 +210,16 @@
                 // alert("You have won " + indicatedSegment.text);
                 // resetWheel();
                 // theWheel.stopAnimation(false);
+                let germanTranslation = {
+                    'Happiness': 'Glück',
+                    'Love': 'Liebe',
+                    'Anger': 'Wut',
+                    'Fear': 'Furcht',
+                    'Sadness': 'Traurigkeit',
+                    'Overwhelmed': 'Überwältigt'
+                }
                 wheelSpinning = false;
-                document.getElementById('result').innerHTML = indicatedSegment.text;
+                document.getElementById('result').innerHTML = indicatedSegment.text + '<br/>(' + germanTranslation[indicatedSegment.text] + ')';
                 document.getElementById('result-parent').style = 'background-color: ' + getColorFromName(wheelSegments, indicatedSegment.text);
                 previousEmotion = indicatedSegment.text;
                 document.getElementById('result').classList.add('animate__bounceInDown');
